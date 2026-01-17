@@ -894,8 +894,15 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="ml-64 p-8">
+      <main className="ml-64 p-8 pb-16">
         {renderContent()}
+        
+        {/* Footer Branding */}
+        <footer className="mt-12 pt-6 border-t border-border text-center">
+          <p className="text-sm text-muted-foreground">
+            Developed by <span className="font-semibold text-accent">Akash Creation</span>
+          </p>
+        </footer>
       </main>
 
       {/* Modals */}
