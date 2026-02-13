@@ -58,6 +58,7 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import { toast } from 'sonner';
+import ScreenActivityPanel from '@/components/dashboard/ScreenActivityPanel';
 import {
   Dialog,
   DialogContent,
@@ -942,6 +943,7 @@ const EmployeeDashboard = () => {
       case 'my-targets': return renderMyTargets();
       case 'attendance': return renderAttendance();
       case 'performance': return renderPerformance();
+      case 'screen-activity': return <ScreenActivityPanel employeeId={user.id} />;
       default: return renderDashboard();
     }
   };

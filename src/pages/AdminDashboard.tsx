@@ -9,6 +9,7 @@ import AddEmployeeModal from '@/components/modals/AddEmployeeModal';
 import EditEmployeeModal from '@/components/modals/EditEmployeeModal';
 import DeleteConfirmModal from '@/components/modals/DeleteConfirmModal';
 import AdminSettings from '@/pages/AdminSettings';
+import ScreenActivityPanel from '@/components/dashboard/ScreenActivityPanel';
 import { 
   getTeamStats, 
   getSalesEmployees,
@@ -873,6 +874,31 @@ const AdminDashboard = () => {
     );
   };
 
+  const renderScreenActivity = () => (
+    <div className="space-y-6 animate-fade-in">
+      <div>
+        <h1 className="text-2xl font-bold text-foreground">Team Screen Activity</h1>
+        <p className="text-muted-foreground mt-1">Monitor screen activity for all team members</p>
+      </div>
+      {salesEmployees.length === 0 ? (
+        <div className="glass-card rounded-xl p-12 text-center">
+          <p className="text-muted-foreground">No employees added yet</p>
+        </div>
+      ) : (
+        <div className="space-y-8">
+          {salesEmployees.map(emp => (
+            <ScreenActivityPanel
+              key={emp.id}
+              employeeId={emp.id}
+              employeeName={emp.name}
+              showControls={false}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard': return renderDashboard();
@@ -880,6 +906,7 @@ const AdminDashboard = () => {
       case 'leave-requests': return renderLeaveRequests();
       case 'notifications': return renderNotifications();
       case 'analytics': return renderAnalytics();
+      case 'screen-activity': return renderScreenActivity();
       case 'targets': return (
         <div className="animate-fade-in">
           <h1 className="text-2xl font-bold text-foreground mb-4">Manage Targets</h1>
