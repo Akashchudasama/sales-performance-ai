@@ -31,6 +31,7 @@ const Sidebar = ({ activeTab, onTabChange }: SidebarProps) => {
     { id: 'my-targets', label: 'My Targets', icon: Target },
     { id: 'attendance', label: 'Attendance', icon: CalendarDays },
     { id: 'performance', label: 'Performance', icon: TrendingUp },
+    { id: 'screen-activity', label: 'Screen Activity', icon: BarChart3 },
   ];
 
   const adminNavItems = [
@@ -39,6 +40,7 @@ const Sidebar = ({ activeTab, onTabChange }: SidebarProps) => {
     { id: 'leave-requests', label: 'Leave Requests', icon: FileText },
     { id: 'notifications', label: 'Notifications', icon: CalendarDays },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+    { id: 'screen-activity', label: 'Screen Activity', icon: BarChart3 },
     { id: 'targets', label: 'Manage Targets', icon: Target },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
